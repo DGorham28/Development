@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8"/>
+      <title>One Stop Shop </title>
+        <style>
+          #products{
+            text-align:left;
+          }
+          #quantity{
+            text-align:center;
+            vertical-align: text-top;
+          }
+          #input{
+            text-align:center;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid white;
+            width: 15%;
+          }
+
+        </style>
+    </head>
+<body>
+<div id="products">
+<h3>Product #1</h3>
+<img src="blubear.jpeg" alt="flower">
+
+<h3>Product #2</h3>
+<img src="boxcho.jpg" alt="boxcho">
+
+<h3>Product #3</h3>
+<img src="ted.jpeg" alt="ted">
+</div>
+
+<div id="quantity">
+<h1>Quantity</h1>
+</div>
+ 
+<div id= "input">
+  <input type ="text"  id="quantity" placeholder="enter a quantity"/> 
+  <input type ="text"  id="quantity" placeholder="enter a quantity"/> 
+  <input type ="text"  id="quantity" placeholder="enter a quantity"/> 
+  
+  <button id="button" onclick = "totalAmount()"> Total = </button> 
+</div>
+
+
+
+  <script>
+      // create a totalAmount() function that contains the product prices (in variables) for each product.
+      //parses the values received from the inputs and then does that mathematical calculations for the number of products orders 
+      //and then outputs that to a div or span so the total shows on screen//
+      function calculateTotal() {
+                   var rosePrice = 50;
+                   var roseInputElement = document.getElementById("roseInput");
+                   var roseQuantity = roseInputElement.value;
+                   var roseQuantityAsNumber = parseInt (roseQuantity);
+                   var roseTotalCost = rosePrice * roseQuantityAsNumber;
+var sumCost= roseTotalCost + jasmineTotalCost + lemongrassTotalCost;
+document.getElementById("totalCost").value = "$" + sumCost;
+   }
+        
+    </script>
+</body>
+</html>

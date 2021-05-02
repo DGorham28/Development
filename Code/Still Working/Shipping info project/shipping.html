@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>shippingProject</title>
+</head>
+<body>
+	<h1>Enter Your Shipping Information</h1>
+	<br>
+	<div class="container">
+<div class="column">
+	<p>First Name
+	<br><input type="text" placeholder="Devin" id= "FirstNameInputField"> <br><span id="FirstNameErrorMessage" class="ErrorMessages"></span></p>
+
+	<p>Lastname
+	<br><input type="text" placeholder="Gorham" id= "LastNameInputField"><br><span id="LastNameErrorMessage" class="ErrorMessages"></span></p>
+
+	<p>Age
+	<br><input type="text" placeholder="24"   id= "AgeInputField"><br><span id="AgeErrorMessage" class="ErrorMessages"></span></p>
+
+	<p>Address1
+	<br><input type="text"  placeholder="123 number street" id= "Address1InputField"><br><span id="Address1ErrorMessage" class="ErrorMessages"></span></p>
+
+	<p>Address2
+	<br><input type="text" placeholder="Apt# 2B"  id= "Address2InputField"><br><span id="Address2ErrorMessage" class="ErrorMessages"></span></p>
+
+	<p>City
+	<br><input type="text" placeholder="Hanover"  id= "CityInputField"><br><span id="CityErrorMessage" class="ErrorMessages"></span></p>
+
+	<p>State
+	<br><input type="text" placeholder="MD"  id= "StateInputField"><br><span id="StateErrorMessage" class="ErrorMessages"></span></p>
+
+	<p>Zip
+	<br><input type="text" placeholder="00000"  id= "ZipInputField"><br><span id="ZipErrorMessage" class="ErrorMessages"></span></p>
+</div>
+
+<button id="submitbutton" onclick="validateinfo()">Verify Information</button>
+
+<script>
+
+	//Initialize each Input Field
+function validateinfo(){
+	
+	var firstNameInput= document.getElementById('FirstNameInputField').value;
+	var lastNameInput = document.getElementById('LastNameInputField').value;
+	var ageInput = document.getElementById('AgeInputField').value;
+	var address1Input = document.getElementById('Address1InputField').value;
+	var address2Input = document.getElementById('Address2InputField').value;
+	var cityInput = document.getElementById('CityInputField').value;
+	var stateInput = document.getElementById('StateInputField').value;
+	var zipInput = document.getElementById('ZipInputField').value;
+//Done
+	if (firstNameInput.length < 5){ 
+		document.getElementById('FirstNameInputField').scrollIntoView("FirstNameInputField");
+		document.getElementById('FirstNameErrorMessage').innerHTML = 'First Name Must Be at least 5 characters.';
+		// alert('Alert: First Name Must Be at least 5 characters.');
+	} 
+		//current
+	if (lastNameInput.length < 5){
+		//alert('Alert: Last Name Must Be at least 5 characters.');
+		document.getElementById('LastNameInputField').scrollIntoView("LastNameInputField");
+		document.getElementById('LastNameErrorMessage').innerHTML = 'Enter a valid Last Name';
+	}
+
+	if (ageInput.length !=2 || !Number.isInteger(parseInt(ageInput))){
+		document.getElementById('AgeInputField').scrollIntoView("AgeInputField");
+		document.getElementById('AgeErrorMessage').innerHTML = 'Enter a valid Age';
+	}
+
+	if (address1Input.length < 10){
+		document.getElementById('Address1InputField').scrollIntoView("Address1InputField");
+		document.getElementById('Address1ErrorMessage').innerHTML = 'Enter a valid Address ';
+	}
+
+	if (address2Input.length < 10){
+		document.getElementById('Address2InputField').scrollIntoView("Address2InputField");
+		document.getElementById('Address2ErrorMessage').innerHTML = 'Enter a valid Address';
+	}
+
+	if (cityInput.length < 5){
+		document.getElementById('CityInputField').scrollIntoView("CityInputField");
+		document.getElementById('CityErrorMessage').innerHTML = 'Enter a valid City';
+	}
+
+	if (stateInput.length <5){
+		document.getElementById('StateInputField').scrollIntoView("StateInputField");
+		document.getElementById('StateErrorMessage').innerHTML = 'Enter a valid State';
+	}
+	
+	if (zipInput.length <5 || !Number.isInteger(parseInt(zipInput))){
+		document.getElementById('ZipInputField').scrollIntoView("ZipInputField");
+		document.getElementById('ZipErrorMessage').innerHTML = 'Enter a valid State';
+	}else{
+		alert("Success");
+	}
+};
+
+</script>
+</body>
+</html>

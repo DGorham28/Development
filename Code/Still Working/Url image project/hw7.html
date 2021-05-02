@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+       #center{text-align: center;
+                    
+       }
+     
+       #button{text-align: center;
+                margin-top:2%;      
+       } 
+       #dynamocImage1{
+           width:250px;
+           height:250px;
+       }
+        </style>
+    </head>
+    <body>
+        
+        <div id="center">
+           <h2>Enter a url</h2> 
+           <input type ="text" id="urlInput" placeholder="enter a url"/> 
+        </div>   
+        
+         <div id="button">
+        <button id="button" onclick = "showimage()"> click to display the image below! </button> 
+         </div>
+         
+         <div id= "dynamicImage1">
+         <img src="" id="dynamicImage" />
+        </div>
+
+
+
+        <script>
+            function showimage(){
+                //psuedo code
+
+                //Get a reference to the input box
+                //Get URL from the input box
+                //Get a referance to the image element
+                //update the image elements src attr (Make it = Url)
+
+                var urlinputElement = document.getElementById("urlInput")
+                var url = urlinputElement.value;
+                var imageElement = document.getElementById("dynamicImage")
+                imageElement.src = url;
+                dynamicImage1.setAttribute("style", "border: 10px solid red")
+            }
+        </script>
+    </body>
+</html>
